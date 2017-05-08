@@ -1,0 +1,59 @@
+/**
+ * Copyright &copy; 2015侠客 All rights reserved.
+ */
+package com.shark.tho.certification.use.service;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.shark.base.common.persistence.Page;
+import com.shark.base.common.service.CrudService;
+import com.shark.tho.certification.use.dao.CertificationUseDao;
+import com.shark.tho.certification.use.entity.CertificationUse;
+
+/**
+ * 证书管理Service
+ * @author lu
+ * @version 2016-12-17
+ */
+@Service
+@Transactional(readOnly = true)
+public class CertificationUseService extends CrudService<CertificationUseDao, CertificationUse> {
+
+	public CertificationUse get(String id) {
+		return super.get(id);
+	}
+	
+	public List<CertificationUse> findList(CertificationUse certificationUse) {
+		return super.findList(certificationUse);
+	}
+	
+	public List<Map> findTypeList(CertificationUse certificationUse) {
+		return this.dao.findTypeList(certificationUse);
+	}
+	
+	public List<Map> findStaticListByType(CertificationUse certificationUse) {
+		return this.dao.findStaticListByType(certificationUse);
+	}
+	
+	public Page<CertificationUse> findPage(Page<CertificationUse> page, CertificationUse certificationUse) {
+		
+		dataScopeFilter(certificationUse,"dsf", "id = a.usingdepartment", "id = a.create_by");
+		
+		return super.findPage(page, certificationUse);
+	}
+	
+	@Transactional(readOnly = false)
+	public void save(CertificationUse certificationUse) {
+		super.save(certificationUse);
+	}
+	
+	@Transactional(readOnly = false)
+	public void delete(CertificationUse certificationUse) {
+		super.delete(certificationUse);
+	}
+	
+}

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shark.tho.project.progress.dao.ProjectBuildconditionDao">
+    
+	<sql id="projectBuildconditionColumns">
+		a.id AS "id",
+		a.orderno AS "orderno",
+		a.projectname AS "projectname",
+		a.contracttime AS "contracttime",
+		a.acceptancetime AS "acceptancetime",
+		a.constructiontime AS "constructiontime",
+		a.contractday AS "contractday",
+		a.planday AS "planday",
+		a.matter AS "matter",
+		a.department AS "department.id",
+		a.header AS "header.id",
+		a.construction AS "construction",
+		a.acceptancecheck AS "acceptancecheck",
+		a.receivedpayments AS "receivedpayments",
+		a.status AS "status",
+		a.percentcomplete AS "percentcomplete",
+		a.leader AS "leader.id",
+		a.person AS "person",
+		a.del_flag AS "delFlag",
+		a.remarks AS "remarks",
+		a.update_date AS "updateDate",
+		a.update_by AS "updateBy.id",
+		a.create_date AS "createDate",
+		a.create_by AS "createBy.id",
+		o8.name AS "department.name",
+		u9.name AS "header.name",
+		u15.name AS "leader.name",
+		u16.name as "updateBy.name"
+	</sql>
+	
+	<sql id="projectBuildconditionJoins">
+		LEFT JOIN sys_office o8 ON o8.id = a.department
+		LEFT JOIN sys_user u9 ON u9.id = a.header
+		LEFT JOIN sys_user u15 ON u15.id = a.leader
+		LEFT JOIN sys_user u16 ON u16.id = a.update_by
+	</sql>
+    
+	<select id="get" resultType="ProjectBuildcondition">
+		SELECT 
+			<include refid="projectBuildconditionColumns"/>
+		FROM tho_project_buildcondition a
+		<include refid="projectBuildconditionJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="ProjectBuildcondition">
+		SELECT 
+			<include refid="projectBuildconditionColumns"/>
+		FROM tho_project_buildcondition a
+		<include refid="projectBuildconditionJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="projectname != null and projectname != ''">
+				AND a.projectname = #{projectname}
+			</if>
+			<if test="contracttime != null and contracttime != ''">
+				AND a.contracttime = #{contracttime}
+			</if>
+			<if test="department != null and department.id != null and department.id != ''">
+				AND a.department = #{department.id}
+			</if>
+			<if test="header != null and header.id != null and header.id != ''">
+				AND a.header = #{header.id}
+			</if>
+			<if test="status != null and status != ''">
+				AND a.status = #{status}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="ProjectBuildcondition">
+		SELECT 
+			<include refid="projectBuildconditionColumns"/>
+		FROM tho_project_buildcondition a
+		<include refid="projectBuildconditionJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tho_project_buildcondition(
+			id,
+			orderno,
+			projectname,
+			contracttime,
+			constructiontime,
+			contractday,
+			matter,
+			department,
+			header,
+			construction,
+			acceptancecheck,
+			receivedpayments,
+			status,
+			percentcomplete,
+			leader,
+			person,
+			del_flag,
+			remarks,
+			update_date,
+			update_by,
+			create_date,
+			create_by,
+			planday,
+			acceptancetime
+		) VALUES (
+			#{id},
+			#{orderno},
+			#{projectname},
+			#{contracttime},
+			#{constructiontime},
+			#{contractday},
+			#{matter},
+			#{department.id},
+			#{header.id},
+			#{construction},
+			#{acceptancecheck},
+			#{receivedpayments},
+			#{status},
+			#{percentcomplete},
+			#{leader.id},
+			#{person},
+			#{delFlag},
+			#{remarks},
+			#{updateDate},
+			#{updateBy.id},
+			#{createDate},
+			#{createBy.id},
+			#{planday},
+			#{acceptancetime}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE tho_project_buildcondition SET 	
+			projectname = #{projectname},
+			contracttime = #{contracttime},
+			constructiontime = #{constructiontime},
+			contractday = #{contractday},
+			matter = #{matter},
+			department = #{department.id},
+			header = #{header.id},
+			construction = #{construction},
+			acceptancecheck = #{acceptancecheck},
+			receivedpayments = #{receivedpayments},
+			status = #{status},
+			percentcomplete = #{percentcomplete},
+			leader = #{leader.id},
+			person = #{person},
+			update_by = #{updateBy.id},
+			remarks = #{remarks},
+			planday = #{planday},
+			acceptancetime = #{acceptancetime}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE tho_project_buildcondition SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

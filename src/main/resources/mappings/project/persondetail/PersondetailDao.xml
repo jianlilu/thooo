@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shark.mx.project.persondetail.dao.PersondetailDao">
+    
+	<sql id="persondetailColumns">
+		a.id AS "id",
+		a.zb AS "zb",
+		a.username AS "username",
+		a.cardno AS "cardno",
+		a.jyknrylx AS "jyknrylx",
+		a.zyjsbt AS "zyjsbt",
+		a.zypxbt AS "zypxbt",
+		a.shbxbt AS "shbxbt",
+		a.gwbt AS "gwbt",
+		a.jxbt AS "jxbt",
+		a.zxwqyjybt AS "zxwqyjybt",
+		a.lsshbt AS "lsshbt",
+		a.cypxbt AS "cypxbt",
+		a.ycxcyzz AS "ycxcyzz",
+		a.zjbt AS "zjbt",
+		a.cyfhbt AS "cyfhbt",
+		a.cyddjybt AS "cyddjybt",
+		a.xedbdktx AS "xedbdktx",
+		a.cyfwzc AS "cyfwzc",
+		a.frdb AS "frdb",
+		a.btrs AS "btrs",
+		a.del_flag AS "delFlag",
+		a.remarks AS "remarks",
+		a.update_date AS "updateDate",
+		a.update_by AS "updateBy.id",
+		a.create_date AS "createDate",
+		a.create_by AS "createBy.id"
+	</sql>
+	
+	<sql id="persondetailJoins">
+	</sql>
+    
+	<select id="get" resultType="Persondetail">
+		SELECT 
+			<include refid="persondetailColumns"/>
+		FROM mxsb_t001_persondetail a
+		<include refid="persondetailJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="Persondetail">
+		SELECT 
+			<include refid="persondetailColumns"/>
+		FROM mxsb_t001_persondetail a
+		<include refid="persondetailJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="zb != null and zb != ''">
+				AND a.zb = #{zb}
+			</if>
+			<if test="username != null and username != ''">
+				AND a.username like CONCAT('%', #{username}, '%')
+			</if>
+			<if test="frdb != null and frdb != ''">
+				AND a.frdb like CONCAT('%', #{frdb}, '%')
+			</if>
+			<if test="cardno != null and cardno != ''">
+				AND a.cardno = #{cardno}
+			</if>
+			<if test="jyknrylx != null and jyknrylx != ''">
+				AND a.jyknrylx = #{jyknrylx}
+			</if>
+			<if test="btlx != null and btlx != ''">
+				AND a.${btlx} != '0'
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="Persondetail">
+		SELECT 
+			<include refid="persondetailColumns"/>
+		FROM mxsb_t001_persondetail a
+		<include refid="persondetailJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO mxsb_t001_persondetail(
+			id,
+			zb,
+			username,
+			cardno,
+			jyknrylx,
+			zyjsbt,
+			zypxbt,
+			shbxbt,
+			gwbt,
+			jxbt,
+			zxwqyjybt,
+			lsshbt,
+			cypxbt,
+			ycxcyzz,
+			zjbt,
+			cyfhbt,
+			cyddjybt,
+			xedbdktx,
+			cyfwzc,
+			frdb,
+			btrs,
+			del_flag,
+			remarks,
+			update_date,
+			update_by,
+			create_date,
+			create_by
+		) VALUES (
+			#{id},
+			#{zb},
+			#{username},
+			#{cardno},
+			#{jyknrylx},
+			#{zyjsbt},
+			#{zypxbt},
+			#{shbxbt},
+			#{gwbt},
+			#{jxbt},
+			#{zxwqyjybt},
+			#{lsshbt},
+			#{cypxbt},
+			#{ycxcyzz},
+			#{zjbt},
+			#{cyfhbt},
+			#{cyddjybt},
+			#{xedbdktx},
+			#{cyfwzc},
+			#{frdb},
+			#{btrs},
+			#{delFlag},
+			#{remarks},
+			#{updateDate},
+			#{updateBy.id},
+			#{createDate},
+			#{createBy.id}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE mxsb_t001_persondetail SET 	
+			zb = #{zb},
+			username = #{username},
+			cardno = #{cardno},
+			jyknrylx = #{jyknrylx},
+			zyjsbt = #{zyjsbt},
+			frdb = #{frdb},
+			btrs = #{btrs},
+			zypxbt = #{zypxbt},
+			shbxbt = #{shbxbt},
+			gwbt = #{gwbt},
+			jxbt = #{jxbt},
+			zxwqyjybt = #{zxwqyjybt},
+			lsshbt = #{lsshbt},
+			cypxbt = #{cypxbt},
+			ycxcyzz = #{ycxcyzz},
+			zjbt = #{zjbt},
+			cyfhbt = #{cyfhbt},
+			cyddjybt = #{cyddjybt},
+			xedbdktx = #{xedbdktx},
+			cyfwzc = #{cyfwzc},
+			remarks = #{remarks},
+			update_date = #{updateDate},
+			update_by = #{updateBy.id}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE mxsb_t001_persondetail SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

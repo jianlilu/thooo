@@ -1,0 +1,107 @@
+10
+
+dir
+3
+svn://192.168.1.133/project/tho_projectManager/src/main/webapp/static/jquery-jbox/2.3/Skins
+svn://192.168.1.133
+
+
+
+2016-11-03T02:24:56.806910Z
+3
+wujh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11b27213-7178-0f46-95b9-b918c2a3a622
+
+GrayCool
+dir
+
+ShareGreen
+dir
+
+Default
+dir
+
+Brown
+dir
+
+Blue
+dir
+
+SharePurple
+dir
+
+ShareRed
+dir
+
+Green
+dir
+
+Gray
+dir
+
+样式说明(以Default皮肤为例).css
+file
+
+
+
+
+2016-11-19T03:45:57.254082Z
+f9d918bda0ac6057bd10b4ffc5c64130
+2016-11-03T02:24:56.806910Z
+3
+wujh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3114
+
+Purple
+dir
+
+ShareBrown
+dir
+
+ShareBlue
+dir
+
+Red
+dir
+
+Bootstrap
+dir
+
+GreyBlue
+dir
+

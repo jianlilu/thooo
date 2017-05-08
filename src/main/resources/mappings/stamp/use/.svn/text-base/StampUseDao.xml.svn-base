@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shark.tho.stamp.use.dao.StampUseDao">
+    
+	<sql id="stampUseColumns">
+		a.id AS "id",
+		a.stamptype AS "stamptype",
+		a.usingtime AS "usingtime",
+		a.usingdepartment AS "usingdepartment.id",
+		a.contentabstracts AS "contentabstracts",
+		a.usagecounter AS "usagecounter",
+		a.stampadmin AS "stampadmin.id",
+		a.del_flag AS "delFlag",
+		a.remarks AS "remarks",
+		a.update_date AS "updateDate",
+		a.update_by AS "updateBy.id",
+		a.create_date AS "createDate",
+		a.create_by AS "createBy.id",
+		o4.name AS "usingdepartment.name",
+		u7.name AS "stampadmin.name",
+		u8.name AS "createBy.name"
+	</sql>
+	
+	<sql id="stampUseJoins">
+		LEFT JOIN sys_office o4 ON o4.id = a.usingdepartment
+		LEFT JOIN sys_user u7 ON u7.id = a.stampadmin
+		LEFT JOIN sys_user u8 ON u8.id = a.create_by
+	</sql>
+    
+	<select id="get" resultType="StampUse">
+		SELECT 
+			<include refid="stampUseColumns"/>
+		FROM tho_stamp_use a
+		<include refid="stampUseJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="StampUse">
+		SELECT 
+			<include refid="stampUseColumns"/>
+		FROM tho_stamp_use a
+		<include refid="stampUseJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="stamptype != null and stamptype != ''">
+				AND a.stamptype = #{stamptype}
+			</if>
+			<if test="usingtime != null and usingtime != ''">
+				AND a.usingtime LIKE 
+					<if test="dbName == 'oracle'">#{usingtime}||'%'</if>
+					<if test="dbName == 'mssql'">#{usingtime}+'%'</if>
+					<if test="dbName == 'mysql'">concat(#{usingtime},'%')</if>
+			</if>
+			<if test="usingdepartment != null and usingdepartment.id != null and usingdepartment.id != ''">
+				AND a.usingdepartment = #{usingdepartment.id}
+			</if>
+		</where>
+		<!-- 数据范围过滤 -->
+		${sqlMap.dsf}
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="StampUse">
+		SELECT 
+			<include refid="stampUseColumns"/>
+		FROM tho_stamp_use a
+		<include refid="stampUseJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tho_stamp_use(
+			id,
+			stamptype,
+			usingtime,
+			usingdepartment,
+			contentabstracts,
+			usagecounter,
+			stampadmin,
+			del_flag,
+			remarks,
+			update_date,
+			update_by,
+			create_date,
+			create_by
+		) VALUES (
+			#{id},
+			#{stamptype},
+			#{usingtime},
+			#{usingdepartment.id},
+			#{contentabstracts},
+			#{usagecounter},
+			#{stampadmin.id},
+			#{delFlag},
+			#{remarks},
+			#{updateDate},
+			#{updateBy.id},
+			#{createDate},
+			#{createBy.id}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE tho_stamp_use SET 	
+			stamptype = #{stamptype},
+			usingtime = #{usingtime},
+			usingdepartment = #{usingdepartment.id},
+			contentabstracts = #{contentabstracts},
+			usagecounter = #{usagecounter},
+			stampadmin = #{stampadmin.id},
+			remarks = #{remarks},
+			update_date = #{updateDate},
+			update_by = #{updateBy.id}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE tho_stamp_use SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

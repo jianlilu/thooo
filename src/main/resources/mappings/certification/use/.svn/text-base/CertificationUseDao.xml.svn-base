@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shark.tho.certification.use.dao.CertificationUseDao">
+    
+	<sql id="certificationUseColumns">
+		a.id AS "id",
+		a.certificationtype AS "certificationtype",
+		a.borrowingtime AS "borrowingtime",
+		a.usingdepartment AS "usingdepartment.id",
+		a.usages AS "usages",
+		a.returntime AS "returntime",
+		a.officeadmin AS "officeadmin.id",
+		a.del_flag AS "delFlag",
+		a.remarks AS "remarks",
+		a.update_date AS "updateDate",
+		a.update_by AS "updateBy.id",
+		a.create_date AS "createDate",
+		a.create_by AS "createBy.id",
+		o4.name AS "usingdepartment.name",
+		u7.name AS "officeadmin.name",
+		u8.name AS "createBy.name"
+	</sql>
+	
+	<sql id="certificationUseJoins">
+		LEFT JOIN sys_office o4 ON o4.id = a.usingdepartment
+		LEFT JOIN sys_user u7 ON u7.id = a.officeadmin
+		LEFT JOIN sys_user u8 ON u8.id = a.create_by
+	</sql>
+    
+	<select id="get" resultType="CertificationUse">
+		SELECT 
+			<include refid="certificationUseColumns"/>
+		FROM tho_certification_use a
+		<include refid="certificationUseJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="CertificationUse">
+		SELECT 
+			<include refid="certificationUseColumns"/>
+		FROM tho_certification_use a
+		<include refid="certificationUseJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="certificationtype != null and certificationtype != ''">
+				AND a.certificationtype = #{certificationtype}
+			</if>
+			<if test="borrowingtime != null and borrowingtime != ''">
+				AND a.borrowingtime LIKE 
+					<if test="dbName == 'oracle'">#{borrowingtime}||'%'</if>
+					<if test="dbName == 'mssql'">#{borrowingtime}+'%'</if>
+					<if test="dbName == 'mysql'">concat(#{borrowingtime},'%')</if>
+			</if>
+			<if test="usingdepartment != null and usingdepartment.id != null and usingdepartment.id != ''">
+				AND a.usingdepartment = #{usingdepartment.id}
+			</if>
+		</where>
+		<!-- 数据范围过滤 -->
+		${sqlMap.dsf}
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="CertificationUse">
+		SELECT 
+			<include refid="certificationUseColumns"/>
+		FROM tho_certification_use a
+		<include refid="certificationUseJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tho_certification_use(
+			id,
+			certificationtype,
+			borrowingtime,
+			usingdepartment,
+			usages,
+			returntime,
+			officeadmin,
+			del_flag,
+			remarks,
+			update_date,
+			update_by,
+			create_date,
+			create_by
+		) VALUES (
+			#{id},
+			#{certificationtype},
+			#{borrowingtime},
+			#{usingdepartment.id},
+			#{usages},
+			#{returntime},
+			#{officeadmin.id},
+			#{delFlag},
+			#{remarks},
+			#{updateDate},
+			#{updateBy.id},
+			#{createDate},
+			#{createBy.id}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE tho_certification_use SET 	
+			id = #{id},
+			certificationtype = #{certificationtype},
+			borrowingtime = #{borrowingtime},
+			usingdepartment = #{usingdepartment.id},
+			usages = #{usages},
+			returntime = #{returntime},
+			officeadmin = #{officeadmin.id},
+			remarks = #{remarks},
+			update_date = #{updateDate},
+			update_by = #{updateBy.id}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE tho_certification_use SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

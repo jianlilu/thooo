@@ -1,0 +1,53 @@
+10
+
+dir
+5
+svn://192.168.1.133/project/tho_projectManager/src/main/webapp/static/tho-resources
+svn://192.168.1.133
+
+
+
+2016-12-09T04:00:49.914469Z
+5
+lujl
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+11b27213-7178-0f46-95b9-b918c2a3a622
+
+
+
+
+
+
+0
+
+css
+dir
+
+demo
+dir
+
+fonts
+dir
+
+images
+dir
+
+img
+dir
+
+js
+dir
+

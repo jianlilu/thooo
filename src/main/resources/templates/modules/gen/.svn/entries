@@ -1,0 +1,71 @@
+10
+
+dir
+3
+svn://192.168.1.133/project/tho_projectManager/src/main/resources/templates/modules/gen
+svn://192.168.1.133
+
+
+
+2016-11-03T02:24:56.806910Z
+3
+wujh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11b27213-7178-0f46-95b9-b918c2a3a622
+
+config.xml
+file
+
+
+
+
+2016-11-19T03:47:39.899572Z
+31b08131e3a42e0c2bdec35e8abba70f
+2016-11-03T02:24:56.806910Z
+3
+wujh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+opaquelocktoken:cbe1af1f-2d0a-6e4d-a445-eb9c2269d6d0
+lujl
+lu_lock 2016.12.9
+2016-12-09T03:57:46.941747Z
+
+
+3568
+
+curd
+dir
+
+dao
+dir
+
+treetable
+dir
+

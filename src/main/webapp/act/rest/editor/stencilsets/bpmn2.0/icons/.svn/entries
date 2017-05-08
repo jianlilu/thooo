@@ -1,0 +1,92 @@
+10
+
+dir
+3
+svn://192.168.1.133/project/tho_projectManager/src/main/webapp/act/rest/editor/stencilsets/bpmn2.0/icons
+svn://192.168.1.133
+
+
+
+2016-11-03T02:24:56.806910Z
+3
+wujh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11b27213-7178-0f46-95b9-b918c2a3a622
+
+activity
+dir
+
+artifact
+dir
+
+catching
+dir
+
+connector
+dir
+
+dataobject
+dir
+
+diagram.png
+file
+
+
+
+
+2016-11-19T03:45:37.679617Z
+bbd83f57e6245d6717a4d51becf74f8b
+2016-11-03T02:24:56.806910Z
+3
+wujh
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+opaquelocktoken:e988f977-a781-ee46-8e2f-6a0990aea261
+lujl
+lu_lock 2016.12.9
+2016-12-09T03:56:26.476806Z
+
+
+258
+
+endevent
+dir
+
+gateway
+dir
+
+startevent
+dir
+
+swimlane
+dir
+
+throwing
+dir
+
