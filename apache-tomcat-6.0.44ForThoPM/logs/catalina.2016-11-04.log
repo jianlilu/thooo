@@ -1,0 +1,113 @@
+2016-11-4 9:53:24 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: E:\java\jdk1.6.0_06\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\java\jdk1.6.0_06\\bin;E:\java\jdk1.6.0_06\\jre\bin;E:\wamp64\bin\php\php5.6.19;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;E:\wamp64\bin\mysql\mysql5.7.11\bin;E:\SVN\bin;E:\maven\bin;C:\Users\w\AppData\Roaming\Composer\vendor\bin
+2016-11-4 9:53:25 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+2016-11-4 9:53:25 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 780 ms
+2016-11-4 9:53:25 org.apache.catalina.core.StandardService start
+信息: Starting service Catalina
+2016-11-4 9:53:25 org.apache.catalina.core.StandardEngine start
+信息: Starting Servlet Engine: Apache Tomcat/6.0.44
+2016-11-4 9:53:25 org.apache.catalina.core.StandardContext resourcesStart
+严重: Error starting static Resources
+java.lang.IllegalArgumentException: Document base E:\myWorkspace\tho_projectManager\src\main\webapp does not exist or is not a readable directory
+	at org.apache.naming.resources.FileDirContext.setDocBase(FileDirContext.java:142)
+	at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4324)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4493)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1060)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:822)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1060)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:463)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:525)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:759)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:595)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:289)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:414)
+2016-11-4 9:53:25 org.apache.catalina.core.StandardContext start
+严重: Error in resourceStart()
+2016-11-4 9:53:25 org.apache.catalina.core.StandardContext start
+严重: Error getConfigured
+2016-11-4 9:53:25 org.apache.catalina.core.StandardContext start
+严重: Context [] startup failed due to previous errors
+2016-11-4 9:53:25 org.apache.catalina.core.StandardContext stop
+信息: Container org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/] has not been started
+2016-11-4 9:53:25 org.apache.catalina.startup.HostConfig deployDescriptor
+信息: Deploying configuration descriptor host-manager.xml
+2016-11-4 9:53:25 org.apache.catalina.startup.HostConfig deployDescriptor
+信息: Deploying configuration descriptor manager.xml
+2016-11-4 9:53:25 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory docs
+2016-11-4 9:53:25 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory examples
+2016-11-4 9:53:26 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+2016-11-4 9:53:26 org.apache.jk.common.ChannelSocket init
+信息: JK: ajp13 listening on /0.0.0.0:8009
+2016-11-4 9:53:26 org.apache.jk.server.JkMain start
+信息: Jk running ID=0 time=0/36  config=null
+2016-11-4 9:53:26 org.apache.catalina.startup.Catalina start
+信息: Server startup in 1211 ms
+2016-11-4 9:54:47 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: E:\java\jdk1.6.0_06\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\java\jdk1.6.0_06\\bin;E:\java\jdk1.6.0_06\\jre\bin;E:\wamp64\bin\php\php5.6.19;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;E:\wamp64\bin\mysql\mysql5.7.11\bin;E:\SVN\bin;E:\maven\bin;C:\Users\w\AppData\Roaming\Composer\vendor\bin
+2016-11-4 9:54:48 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+2016-11-4 9:54:48 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 515 ms
+2016-11-4 9:54:48 org.apache.catalina.core.StandardService start
+信息: Starting service Catalina
+2016-11-4 9:54:48 org.apache.catalina.core.StandardEngine start
+信息: Starting Servlet Engine: Apache Tomcat/6.0.44
+2016-11-4 9:54:50 org.apache.catalina.core.StandardContext start
+严重: Error listenerStart
+2016-11-4 9:54:50 org.apache.catalina.core.StandardContext start
+严重: Context [] startup failed due to previous errors
+2016-11-4 9:54:50 org.apache.catalina.startup.HostConfig deployDescriptor
+信息: Deploying configuration descriptor host-manager.xml
+2016-11-4 9:54:50 org.apache.catalina.startup.HostConfig deployDescriptor
+信息: Deploying configuration descriptor manager.xml
+2016-11-4 9:54:50 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory docs
+2016-11-4 9:54:50 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory examples
+2016-11-4 9:54:50 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+2016-11-4 9:54:50 org.apache.jk.common.ChannelSocket init
+信息: JK: ajp13 listening on /0.0.0.0:8009
+2016-11-4 9:54:50 org.apache.jk.server.JkMain start
+信息: Jk running ID=0 time=0/27  config=null
+2016-11-4 9:54:50 org.apache.catalina.startup.Catalina start
+信息: Server startup in 2562 ms
+2016-11-4 10:13:00 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: E:\java\jdk1.6.0_06\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\java\jdk1.6.0_06\\bin;E:\java\jdk1.6.0_06\\jre\bin;E:\wamp64\bin\php\php5.6.19;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;E:\wamp64\bin\mysql\mysql5.7.11\bin;E:\SVN\bin;E:\maven\bin;C:\Users\w\AppData\Roaming\Composer\vendor\bin
+2016-11-4 10:13:00 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+2016-11-4 10:13:00 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 530 ms
+2016-11-4 10:13:00 org.apache.catalina.core.StandardService start
+信息: Starting service Catalina
+2016-11-4 10:13:00 org.apache.catalina.core.StandardEngine start
+信息: Starting Servlet Engine: Apache Tomcat/6.0.44
+2016-11-4 10:13:02 org.apache.catalina.core.StandardContext start
+严重: Error listenerStart
+2016-11-4 10:13:02 org.apache.catalina.core.StandardContext start
+严重: Context [] startup failed due to previous errors
+2016-11-4 10:13:02 org.apache.catalina.startup.HostConfig deployDescriptor
+信息: Deploying configuration descriptor host-manager.xml
+2016-11-4 10:13:02 org.apache.catalina.startup.HostConfig deployDescriptor
+信息: Deploying configuration descriptor manager.xml
+2016-11-4 10:13:02 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory docs
+2016-11-4 10:13:02 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory examples
+2016-11-4 10:13:02 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+2016-11-4 10:13:02 org.apache.jk.common.ChannelSocket init
+信息: JK: ajp13 listening on /0.0.0.0:8009
+2016-11-4 10:13:02 org.apache.jk.server.JkMain start
+信息: Jk running ID=0 time=0/83  config=null
+2016-11-4 10:13:02 org.apache.catalina.startup.Catalina start
+信息: Server startup in 2208 ms

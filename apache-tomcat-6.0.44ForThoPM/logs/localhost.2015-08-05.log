@@ -1,0 +1,10 @@
+2015-8-5 19:11:05 org.apache.catalina.core.ApplicationContext log
+信息: Initializing Spring root WebApplicationContext
+2015-8-5 19:11:09 org.apache.catalina.core.ApplicationContext log
+信息: Initializing Spring FrameworkServlet 'springServlet'
+2015-8-5 19:11:14 org.apache.catalina.core.ApplicationContext log
+信息: ContextListener: contextInitialized()
+2015-8-5 19:11:14 org.apache.catalina.core.ApplicationContext log
+信息: SessionListener: contextInitialized()
+2015-8-5 19:12:20 org.apache.catalina.core.ApplicationContext log
+信息: RestletServlet: [Restlet] Attaching application: com.thinkgem.jeesite.modules.act.rest.ActRestApplication@b23147 to URI: /act/rest/service

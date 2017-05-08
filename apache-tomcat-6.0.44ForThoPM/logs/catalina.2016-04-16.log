@@ -1,0 +1,29 @@
+2016-4-16 8:38:06 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: E:\jdk\jdk1.6.0_06\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\Administrator\AppData\Local\HelloPlugin\;E:\jdk\jdk1.6.0_06\\bin;E:\jdk\jdk1.6.0_06\\jre;E:\maven\apache-maven-3.0.3\\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5.4 & MySQL Utilities 1.5.4 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5.4 & MySQL Utilities 1.5.4 1.5\Doctrine extensions for PHP\
+2016-4-16 8:38:06 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+2016-4-16 8:38:06 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 537 ms
+2016-4-16 8:38:06 org.apache.catalina.core.StandardService start
+信息: Starting service Catalina
+2016-4-16 8:38:06 org.apache.catalina.core.StandardEngine start
+信息: Starting Servlet Engine: Apache Tomcat/6.0.44
+2016-4-16 8:38:21 org.apache.catalina.startup.HostConfig deployDescriptor
+信息: Deploying configuration descriptor host-manager.xml
+2016-4-16 8:38:22 org.apache.catalina.startup.HostConfig deployDescriptor
+信息: Deploying configuration descriptor manager.xml
+2016-4-16 8:38:22 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory docs
+2016-4-16 8:38:22 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory examples
+2016-4-16 8:38:22 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+2016-4-16 8:38:22 org.apache.jk.common.ChannelSocket init
+信息: JK: ajp13 listening on /0.0.0.0:8009
+2016-4-16 8:38:22 org.apache.jk.server.JkMain start
+信息: Jk running ID=0 time=0/33  config=null
+2016-4-16 8:38:22 org.apache.catalina.startup.Catalina start
+信息: Server startup in 16066 ms
+2016-4-16 8:44:24 org.apache.tomcat.util.http.Parameters processParameters
+信息: Invalid chunk starting at byte [29] and ending at byte [30] with a value of [=] ignored
+ Note: further occurrences of Parameter errors will be logged at DEBUG level.

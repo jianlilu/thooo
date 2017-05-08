@@ -1,0 +1,42 @@
+[2017-03-20 10:13:34] [info]  [ 4412] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2017-03-20 10:13:34] [info]  [ 4412] Debugging 'tomcat6' service...
+[2017-03-20 10:13:34] [info]  [ 4412] Starting service...
+[2017-03-20 10:13:34] [error] [ 4412] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:13:34] [error] [ 4412] Failed creating java E:\java\jdk1.6.0_06\\jre\bin\server\jvm.dll
+[2017-03-20 10:13:34] [error] [ 4412] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:13:34] [error] [ 4412] ServiceStart returned 1
+[2017-03-20 10:13:35] [error] [ 4412] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:13:35] [info]  [ 4412] Debug service finished with exit code 1
+[2017-03-20 10:13:35] [error] [ 4412] Commons Daemon procrun failed with exit value: 3 (Failed to run service as console application)
+[2017-03-20 10:13:35] [error] [ 4412] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:13:48] [info]  [ 6344] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2017-03-20 10:13:48] [info]  [ 6344] Debugging 'tomcat6' service...
+[2017-03-20 10:13:48] [info]  [ 6344] Starting service...
+[2017-03-20 10:13:48] [error] [ 6344] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:13:48] [error] [ 6344] Failed creating java E:\java\jdk1.6.0_06\\jre\bin\server\jvm.dll
+[2017-03-20 10:13:48] [error] [ 6344] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:13:48] [error] [ 6344] ServiceStart returned 1
+[2017-03-20 10:13:48] [error] [ 6344] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:13:48] [info]  [ 6344] Debug service finished with exit code 1
+[2017-03-20 10:13:48] [error] [ 6344] Commons Daemon procrun failed with exit value: 3 (Failed to run service as console application)
+[2017-03-20 10:13:48] [error] [ 6344] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:57:03] [info]  [ 7064] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2017-03-20 10:57:03] [info]  [ 7064] Running 'Tomcat6' Service...
+[2017-03-20 10:57:04] [info]  [ 2664] Starting service...
+[2017-03-20 10:57:04] [error] [ 2664] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:57:04] [error] [ 2664] Failed creating java E:\java\jdk1.6.0_06\\jre\bin\server\jvm.dll
+[2017-03-20 10:57:04] [error] [ 2664] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:57:04] [error] [ 2664] ServiceStart returned 1
+[2017-03-20 10:57:04] [error] [ 2664] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:57:04] [info]  [ 7064] Run service finished.
+[2017-03-20 10:57:04] [info]  [ 7064] Commons Daemon procrun finished
+[2017-03-20 10:57:06] [info]  [ 3348] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2017-03-20 10:57:06] [info]  [ 3348] Running 'Tomcat6' Service...
+[2017-03-20 10:57:06] [info]  [  188] Starting service...
+[2017-03-20 10:57:06] [error] [  188] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:57:06] [error] [  188] Failed creating java E:\java\jdk1.6.0_06\\jre\bin\server\jvm.dll
+[2017-03-20 10:57:06] [error] [  188] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:57:06] [error] [  188] ServiceStart returned 1
+[2017-03-20 10:57:06] [error] [  188] %1 不是有效的 Win32 应用程序。
+[2017-03-20 10:57:06] [info]  [ 3348] Run service finished.
+[2017-03-20 10:57:06] [info]  [ 3348] Commons Daemon procrun finished

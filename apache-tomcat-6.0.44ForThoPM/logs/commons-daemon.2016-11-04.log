@@ -1,0 +1,91 @@
+[2016-11-04 09:45:41] [info]  [32772] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-11-04 09:45:41] [info]  [32772] Service Tomcat6 name Apache Tomcat 6.0 Tomcat6
+[2016-11-04 09:45:42] [info]  [32772] Service 'Tomcat6' installed
+[2016-11-04 09:45:42] [info]  [32772] Commons Daemon procrun finished
+[2016-11-04 09:46:02] [info]  [19224] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-11-04 09:46:02] [info]  [19224] Debugging 'tomcat6' service...
+[2016-11-04 09:46:03] [info]  [19224] Starting service...
+[2016-11-04 09:46:03] [error] [19224] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:03] [error] [19224] Failed creating java E:\java\jdk1.6.0_06\\jre\bin\server\jvm.dll
+[2016-11-04 09:46:03] [error] [19224] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:03] [error] [19224] ServiceStart returned 1
+[2016-11-04 09:46:03] [error] [19224] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:03] [info]  [19224] Debug service finished with exit code 1
+[2016-11-04 09:46:03] [error] [19224] Commons Daemon procrun failed with exit value: 3 (Failed to run service as console application)
+[2016-11-04 09:46:03] [error] [19224] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:14] [info]  [33024] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-11-04 09:46:14] [info]  [33024] Debugging 'tomcat6' service...
+[2016-11-04 09:46:14] [info]  [33024] Starting service...
+[2016-11-04 09:46:14] [error] [33024] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:14] [error] [33024] Failed creating java E:\java\jdk1.6.0_06\\jre\bin\server\jvm.dll
+[2016-11-04 09:46:14] [error] [33024] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:14] [error] [33024] ServiceStart returned 1
+[2016-11-04 09:46:14] [error] [33024] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:14] [info]  [33024] Debug service finished with exit code 1
+[2016-11-04 09:46:14] [error] [33024] Commons Daemon procrun failed with exit value: 3 (Failed to run service as console application)
+[2016-11-04 09:46:14] [error] [33024] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:42] [info]  [11200] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-11-04 09:46:42] [info]  [11200] Debugging 'tomcat6' service...
+[2016-11-04 09:46:42] [info]  [11200] Starting service...
+[2016-11-04 09:46:42] [error] [11200] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:42] [error] [11200] Failed creating java E:\java\jdk1.6.0_06\\jre\bin\server\jvm.dll
+[2016-11-04 09:46:42] [error] [11200] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:42] [error] [11200] ServiceStart returned 1
+[2016-11-04 09:46:42] [error] [11200] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:42] [info]  [11200] Debug service finished with exit code 1
+[2016-11-04 09:46:42] [error] [11200] Commons Daemon procrun failed with exit value: 3 (Failed to run service as console application)
+[2016-11-04 09:46:42] [error] [11200] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:46:46] [info]  [33868] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-11-04 09:46:46] [info]  [33868] Service Tomcat6 name Apache Tomcat 6.0 Tomcat6
+[2016-11-04 09:46:46] [error] [33868] 指定的服务已存在。
+[2016-11-04 09:46:46] [error] [33868] Failed installing 'Tomcat6' service
+[2016-11-04 09:46:46] [error] [33868] 指定的服务已存在。
+[2016-11-04 09:46:46] [error] [33868] Commons Daemon procrun failed with exit value: 8 (Failed to install service)
+[2016-11-04 09:46:46] [error] [33868] 指定的服务已存在。
+[2016-11-04 09:47:46] [info]  [38300] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-11-04 09:47:46] [info]  [38300] Debugging 'tomcat6' service...
+[2016-11-04 09:47:46] [info]  [38300] Starting service...
+[2016-11-04 09:47:46] [error] [38300] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:47:46] [error] [38300] Failed creating java E:\java\jdk1.6.0_06\\jre\bin\server\jvm.dll
+[2016-11-04 09:47:46] [error] [38300] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:47:46] [error] [38300] ServiceStart returned 1
+[2016-11-04 09:47:46] [error] [38300] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:47:46] [info]  [38300] Debug service finished with exit code 1
+[2016-11-04 09:47:46] [error] [38300] Commons Daemon procrun failed with exit value: 3 (Failed to run service as console application)
+[2016-11-04 09:47:46] [error] [38300] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:51:45] [info]  [13964] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-11-04 09:51:45] [info]  [13964] Service Tomcat6 name Apache Tomcat 6.0 Tomcat6
+[2016-11-04 09:51:46] [error] [13964] 指定的服务已存在。
+[2016-11-04 09:51:46] [error] [13964] Failed installing 'Tomcat6' service
+[2016-11-04 09:51:46] [error] [13964] 指定的服务已存在。
+[2016-11-04 09:51:46] [error] [13964] Commons Daemon procrun failed with exit value: 8 (Failed to install service)
+[2016-11-04 09:51:46] [error] [13964] 指定的服务已存在。
+[2016-11-04 09:51:59] [info]  [36908] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-11-04 09:51:59] [info]  [36908] Debugging 'tomcat6' service...
+[2016-11-04 09:51:59] [info]  [36908] Starting service...
+[2016-11-04 09:51:59] [error] [36908] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:51:59] [error] [36908] Failed creating java E:\java\jdk1.6.0_06\\jre\bin\server\jvm.dll
+[2016-11-04 09:51:59] [error] [36908] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:51:59] [error] [36908] ServiceStart returned 1
+[2016-11-04 09:51:59] [error] [36908] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:51:59] [info]  [36908] Debug service finished with exit code 1
+[2016-11-04 09:51:59] [error] [36908] Commons Daemon procrun failed with exit value: 3 (Failed to run service as console application)
+[2016-11-04 09:51:59] [error] [36908] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:52:06] [info]  [38432] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-11-04 09:52:06] [info]  [38432] Service Tomcat6 name Apache Tomcat 6.0 Tomcat6
+[2016-11-04 09:52:06] [error] [38432] 指定的服务已存在。
+[2016-11-04 09:52:06] [error] [38432] Failed installing 'Tomcat6' service
+[2016-11-04 09:52:06] [error] [38432] 指定的服务已存在。
+[2016-11-04 09:52:06] [error] [38432] Commons Daemon procrun failed with exit value: 8 (Failed to install service)
+[2016-11-04 09:52:06] [error] [38432] 指定的服务已存在。
+[2016-11-04 09:53:09] [info]  [17688] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-11-04 09:53:09] [info]  [17688] Debugging 'tomcat6' service...
+[2016-11-04 09:53:09] [info]  [17688] Starting service...
+[2016-11-04 09:53:09] [error] [17688] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:53:09] [error] [17688] Failed creating java E:\java\jdk1.6.0_06\\jre\bin\server\jvm.dll
+[2016-11-04 09:53:09] [error] [17688] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:53:09] [error] [17688] ServiceStart returned 1
+[2016-11-04 09:53:09] [error] [17688] %1 不是有效的 Win32 应用程序。
+[2016-11-04 09:53:09] [info]  [17688] Debug service finished with exit code 1
+[2016-11-04 09:53:09] [error] [17688] Commons Daemon procrun failed with exit value: 3 (Failed to run service as console application)
+[2016-11-04 09:53:09] [error] [17688] %1 不是有效的 Win32 应用程序。
