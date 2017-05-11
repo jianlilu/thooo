@@ -1,9 +1,231 @@
 
 # thoPM
 
-## 1、公司网站
+### 1、公司网站
 
-### luuuuuuuuuuuuuuuuuuuuu
+#### 代码片段：
+返回上一页：
+ ` <h1 class="title"><a href="javascript:history.back(-1)"><<返回上一页</a></h1> `
+
+
+引入头部布局：
+	
+    <%@include file="/WEB-INF/views/tho-views/default/thoBaseHeader.jsp" %>
+
+网站面包屑（breadcrumb）：
+
+ 			<ul class="breadcrumb">                   
+                    <li><i class="fa fa-fw fa-home"></i> <a href="${ctx}">首页</a></li>
+                    <li><a href="${category.url}">${category.name}</a></li>  
+            </ul>
+
+引入脚部布局：
+
+	<%@include file="/WEB-INF/views/tho-views/default/thoBaseFooter.jsp" %>
+
+引入全局通用样式：
+> 	<%@include file="/WEB-INF/views/tho-views/default/thoBaseStyle.jsp" %>
+
+
+cnzz站点统计：
+
+	<p class="copyright" style="color: #373c38;">	
+				
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260962439'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260962439%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<span  style="padding-left:2px">Copyright &copy; 2015-2016 <strong> gdTho</strong></span>
+	</p>
+
+浏览器标签icon设置：
+> 	<link rel="shortcut icon" href="${ctxStatic}/tho-resources/images/umbrella.ico" />
+> 	<link rel="shortcut icon" href="${ctxStatic}/tho-resources/images/favicon.png"> 
+
+
+顶部百度分享： 
+
+	<div class="baidu-share">				
+		<span><a style="font-size: 13px;">分享到：</a></span>
+		<div class="bdsharebuttonbox">
+			<a href="#" class="bds_qzone" style="margin-top:8px;" data-cmd="qzone" title="分享到QQ空间"></a>						
+			<a href="#" class="bds_tsina" style="margin-top:8px;" data-cmd="tsina" title="分享到新浪微博"></a>
+			<a href="#" class="bds_tqq" style="margin-top:8px;" data-cmd="tqq" title="分享到腾讯微博"></a>
+			<a href="#" class="bds_renren" style="margin-top:8px;" data-cmd="renren" title="分享到人人网"></a>
+			<a href="#" class="bds_weixin" style="margin-top:8px;" data-cmd="weixin" title="分享到微信"></a>
+			<a href="#" class="bds_more" style="margin-top:8px;" data-cmd="more"></a>
+		</div>
+		<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	</div>
+
+
+响应式布局，当屏幕变小时，折叠导航栏，出现Toggle Button（适配手机）：
+
+
+	<!-- Toggle Button -->
+	<button type="button"
+			class="navbar-toggle collapsed"
+			data-toggle="collapse"
+			data-target="#main-menu"
+			aria-expanded="false"
+			aria-controls="main-menu">
+
+		<span class="sr-only">Toggle Navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+
+	</button>
+
+
+导航栏二级菜单动态加载：
+
+	<!-- Navigation -->
+	<div id="main-menu" class="navbar-collapse collapse">
+	
+		<!-- nav -->
+		<ul class="nav navbar-nav navbar-right">    
+		
+			<!-- 导航菜单-"首页"标签 -->
+			<li class="${not empty isIndex && isIndex ? 'active' : ''}"><a href="${ctx}"><span  style="font-weight:bold;">首　 页</span></a></li>
+				<!-- 循环读取数据库中的导航菜单 -->
+				<c:forEach items="${fnc:getOneAndSecondNavList(site.id)}" var="category" varStatus="status">
+					<!-- 最多显示菜单个数 -->
+					<c:if test="${status.index lt 9}"> 
+	                    <c:set var="menuCategoryId" value=",${category.id},"/>
+	                    <!-- 如果：二级菜单为空（没有二级菜单） -->
+	                    <c:if test="${empty category.childList}">
+				    		<li>
+				    			<a href="${category.url}" target="${category.target}"><span  style="font-weight:bold;">${category.name}</span></a>
+				    		</li>							    		
+			    		</c:if>
+			    		 <!-- /如果：二级菜单为空（没有二级菜单） -->
+			    		<!-- 如果：二级菜单不为空 （有二级菜单）-->
+			    		<c:if test="${not empty category.childList}">
+				    		<li class="dropdown">
+								<a href="${category.url}" class="dropdown-toggle"><span  style="font-weight:bold;">${category.name}</span></a>
+								<ul class="dropdown-menu">
+									<c:forEach items="${category.childList}" var="subCategory">
+										<li><a href="${subCategory.url}"><span  style="font-weight:bold;">${subCategory.name}</span></a></li>										
+									</c:forEach>
+								</ul>
+							</li>																	
+			    		</c:if>	
+			    		<!-- /如果：二级菜单不为空 （有二级菜单）-->					    		
+			    	</c:if>
+			    	<!-- /最多显示菜单个数 -->
+		    	</c:forEach>
+		    	<!-- /循环读取数据库中的导航菜单 -->
+	    </ul>
+	    <!-- /nav -->
+	    
+	</div>
+	<!-- /Navigation -->
+
+
+
+循环取得文章标题、更新日期和文章摘要：
+	
+	<c:forEach items="${page.list}" var="article">
+		<article class="blog-post">
+
+			<h2 class="title bounceInRight wow" data-wow-duration="2.0s" data-stellar-ratio="0.8">
+				<a href="${article.url}" style="color:${article.color}"> 
+					${fns:abbr(article.title,96)}		<!-- 文章标题（若字数超过96用...表示） -->
+				</a>			   				
+			</h2>
+			
+			<ul class="list-inline meta">  <!-- 文章更新日期  -->
+                <li><fmt:formatDate value="${article.updateDate}" pattern="yyyy.MM.dd"/></li>
+            </ul>
+            
+            <div class="content">
+                <p>
+                	${fns:abbr(article.description,96)} <!-- 文章摘要（若字数超过96用...表示） -->
+                </p>
+            </div>
+            
+        </article>
+	</c:forEach>
+	 
+
+页数/分页：
+
+	<div class="pagination">${page}</div>  
+	<script type="text/javascript">
+		function page(n,s){
+			location="${ctx}/list-${category.id}${urlSuffix}?pageNo="+n+"&pageSize="+s;
+		}
+	</script>
+
+
+自动轮播图：
+
+	<div id="myCarousel" class="carousel slide " style="width:100%; margin:0px auto;">
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		</ol>
+		<div class="carousel-inner ">
+			<div class="item active item " style="height:500px;" >
+				<img src="${ctxStatic}/tho-resources/images/tho1.jpg" style="height:500px;" alt="第一张">
+			</div>
+			<div class="item item "  style="height:500px;">
+				<img src="${ctxStatic}/tho-resources/images/tho2.jpg" style="height:500px;" alt="第二张">
+			</div>
+			<div class="item item " style="height:500px;" >
+				<img src="${ctxStatic}/tho-resources/images/tho3.jpg" style="height:500px;" alt="第三张">
+			</div>
+			<div class="item item "  style="height:500px;">
+				<img src="${ctxStatic}/tho-resources/images/tho4.jpg" style="height:500px;" alt="第四张">
+			</div>
+		</div>
+		<a href="#myCarousel" data-slide="prev" class="carousel-control left" style="margin:200px auto;font-size:62px;">&lsaquo;</a>
+		<a href="#myCarousel" data-slide="next" class="carousel-control right" style="margin:200px auto;font-size:62px;">&rsaquo;</a>
+	</div>
+
+
+	<script type="text/javascript">
+
+		$('#myCarousel').carousel({
+			interval : 3000,//每隔3秒切换
+			pause : 'hover',
+			wrap : true,
+		});
+
+	</script>
+
+
+
+循环取得category下 前3张缩略图：
+
+	<c:forEach items="${fnc:getArticleList(site.id, 'd96b626128f448ef87aba47db8436f82', 3, '')}" var="article">
+		
+			<!-- 切割字符串（3张图片的地址） -->
+			<c:set value="${fn:split(article.imageSrc, '\\\\|')}" var="str1" />
+			<!-- 循环取得切割出的3张图片的地址 -->
+			<c:forEach items="${ str1 }" var="image">
+							
+				<div class="col-md-4 col-sm-6 fadeIn wow" data-wow-duration="1.3s" data-wow-delay="0.6s">										
+					<a href="${image}" class="project-item image-popup">
+						<div class="gallery-image">
+							<img src="${image}" alt="${article.title}" style="height:245px">
+						</div>
+					</a>	
+					<a href="${article.url}" target="_blank" class="project-item">
+						<div class="info">
+							<div class="h4 title"><span style="color: #0B1032;">${fns:abbr(article.title,32)}</span></div>
+							<p class="description"><span style="color: #373c38;"># ${fns:abbr(article.description,35)}</span></p>
+							<div class="social"></div>
+						</div>
+					</a>										
+				</div>
+			</c:forEach>
+			<!-- /循环取得切割出的3张图片的地址 -->
+		</c:forEach>
+
+
+
 
 
 ## 2、后台管理系统
