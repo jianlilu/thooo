@@ -14,7 +14,8 @@
 
 网站面包屑（breadcrumb）：
 
- 			<ul class="breadcrumb">                   
+ 			
+			<ul class="breadcrumb">                   
                     <li><i class="fa fa-fw fa-home"></i> <a href="${ctx}">首页</a></li>
                     <li><a href="${category.url}">${category.name}</a></li>  
             </ul>
@@ -24,7 +25,8 @@
 	<%@include file="/WEB-INF/views/tho-views/default/thoBaseFooter.jsp" %>
 
 引入全局通用样式：
-> 	<%@include file="/WEB-INF/views/tho-views/default/thoBaseStyle.jsp" %>
+     
+    <%@include file="/WEB-INF/views/tho-views/default/thoBaseStyle.jsp" %>
 
 
 cnzz站点统计：
@@ -37,8 +39,9 @@ cnzz站点统计：
 	</p>
 
 浏览器标签icon设置：
-> 	<link rel="shortcut icon" href="${ctxStatic}/tho-resources/images/umbrella.ico" />
-> 	<link rel="shortcut icon" href="${ctxStatic}/tho-resources/images/favicon.png"> 
+
+	<link rel="shortcut icon" href="${ctxStatic}/tho-resources/images/umbrella.ico" />
+    <link rel="shortcut icon" href="${ctxStatic}/tho-resources/images/favicon.png"> 
 
 
 顶部百度分享： 
