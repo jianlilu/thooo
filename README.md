@@ -41,7 +41,7 @@ cnzz站点统计：
 浏览器标签icon设置：
 
 	<link rel="shortcut icon" href="${ctxStatic}/tho-resources/images/umbrella.ico" />
-    <link rel="shortcut icon" href="${ctxStatic}/tho-resources/images/favicon.png"> 
+    <link rel="shortcut icon" href="${ctxStatic}/tho-resources/images/favicon.png"/> 
 
 
 顶部百度分享： 
@@ -232,6 +232,32 @@ cnzz站点统计：
 
 
 ## 2、后台管理系统
+
+
+
+
+
+> 证书使用列表：
+
+
+![](pic/cetfList.jpg)
+
+
+> 证书记录添加：
+
+
+![](pic/cerfAdd.jpg)
+
+
+> echarts条形图和饼图（各部门证书使用统计图）：
+
+
+![](pic/echarts01.jpg)
+
+
+
+
+
 
 ### 内置功能 （使用JeeSite开源框架）
 
